@@ -20,17 +20,17 @@
                 <form class="" id="firstForm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required="">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required />
                     </div>
 
                     <div class="mb-3">
                         <label for="roll" class="form-label">Roll <sup class="text-danger">*</sup></label>
-                        <input type="number" min="0" name="roll" class="form-control" id="roll" placeholder="Enter your roll" required="">
+                        <input type="number" min="0" name="roll" class="form-control" id="roll" placeholder="Enter your roll" required />
                     </div>
 
                     <div class="mb-3">
                         <label for="batch" class="form-label">Batch <sup class="text-danger">*</sup></label>
-                        <select class="form-select" name="batch" id="batch" required="" onchange="handleBatch()">
+                        <select class="form-select" name="batch" id="batch" required onchange="handleBatch()">
                             <option value="">Select Batch</option>
                             <option value="1972">1972</option>
                             <option value="1973">1973</option>
@@ -81,7 +81,7 @@
 
                     <div class="mb-3">
                         <label for="department" class="form-label">Department <sup class="text-danger">*</sup></label>
-                        <select class="form-select" name="department" id="department" required="">
+                        <select class="form-select" name="department" id="department" required>
                             <option value="">Select Department</option>
                             <option value="CSE">CSE</option>
                             <option value="EEE">EEE</option>
@@ -99,12 +99,12 @@
 
                     <div class="mb-3">
                         <label for="mobile_number" class="form-label">Mobile Number <sup class="text-danger">*</sup></label>
-                        <input type="text" name="mobile_number" class="form-control" id="mobile_number" placeholder="Enter your mobile number" required="">
+                        <input type="text" name="mobile_number" class="form-control" id="mobile_number" placeholder="Enter your mobile number" required />
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required="">
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required />
                     </div>
                     
                     <div class="mb-3">
@@ -131,12 +131,12 @@
                     
                         <label class="form-label d-block">Spouse <sup class="text-danger">*</sup></label>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="spouseYes" name="spouse" value="Yes" required="" onclick="handleSpouse()">
+                            <input type="radio" class="form-check-input" id="spouseYes" name="spouse" value="Yes" required onclick="handleSpouse()">
                             <label class="form-check-label" for="spouseYes"> Yes</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="spouseNo" name="spouse" value="No" required="" onclick="handleSpouse()">
+                            <input type="radio" class="form-check-input" id="spouseNo" name="spouse" value="No" required onclick="handleSpouse()">
                             <label class="form-check-label" for="spouseNo"> No</label>
                         </div>
                     </div>
@@ -145,12 +145,12 @@
                     
                         <label class="form-label d-block">Kids <sup class="text-danger">*</sup></label>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="kidsYes" name="kids" value="Yes" required="" onclick="handleKidsYes()">
+                            <input type="radio" class="form-check-input" id="kidsYes" name="kids" value="Yes" required onclick="handleKidsYes()">
                             <label class="form-check-label" for="kidsYes"> Yes</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="kidsNo" name="kids" value="No" required="" onclick="handleKidsNo()">
+                            <input type="radio" class="form-check-input" id="kidsNo" name="kids" value="No" required onclick="handleKidsNo()">
                             <label class="form-check-label" for="kidsNo"> No</label>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
                     <div class="mb-3" id="numberOfKidsDiv">
                     
                         <label class="form-label" for="numberOfKids">Number of Kids (If Any) <sup class="text-danger">*</sup></label>
-                        <select class="form-select" id="numberOfKids" required="" onchange="handleNumberOfKids()">
+                        <select class="form-select" id="numberOfKids" required onchange="handleNumberOfKids()">
                             <option value="">Select number of kids</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -170,12 +170,12 @@
                     <div class="mb-3">
                         <label class="form-label d-block">Driver <sup class="text-danger">*</sup></label>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="driverYes" name="driver" value="Yes" required="">
+                            <input type="radio" class="form-check-input" id="driverYes" name="driver" value="Yes" required />
                             <label class="form-check-label" for="driverYes"> Yes</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="driverNo" name="driver" value="No" required="">
+                            <input type="radio" class="form-check-input" id="driverNo" name="driver" value="No" required />
                             <label class="form-check-label" for="driverNo"> No</label>
                         </div>
                     </div>
@@ -202,16 +202,16 @@
                         <label class="form-label d-block">Payment Mode <sup class="text-danger">*</sup></label>
                         
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="paymentModeBkash" name="paymentMode" value="Bkash" required="" onclick="handlePaymentMode(this)">
+                            <input type="radio" class="form-check-input" id="paymentModeBkash" name="paymentMode" value="Bkash" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeBkash"> Bkash</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="paymentModeNagad" name="paymentMode" value="Nagad" required="" onclick="handlePaymentMode(this)">
+                            <input type="radio" class="form-check-input" id="paymentModeNagad" name="paymentMode" value="Nagad" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeNagad"> Nagad</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="paymentModeRocket" name="paymentMode" value="Rocket" required="" onclick="handlePaymentMode(this)">
+                            <input type="radio" class="form-check-input" id="paymentModeRocket" name="paymentMode" value="Rocket" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeRocket"> Rocket</label>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ let spousePay = 0;
 let kidsPay = 0;
 let netPayable = 0;
 let accountNo = '';
+let charge = 0;
 var emailcheck = false;
 // Make an AJAX call to Google Script
 function insert_value() {
@@ -80,6 +81,8 @@ function handleSpouse(){
     let spouse = $("input[name=spouse]:checked").val();
     if (spouse === 'Yes')
         spousePay = 1000;
+    else
+        spousePay = 0;
     
     if(payable){
         payable = personPay + spousePay + kidsPay;
@@ -96,6 +99,9 @@ function handleNumberOfKids(){
     let number_of_kids = $('#numberOfKids').val();
     if(kids === 'Yes'){
         kidsPay = (number_of_kids*500);
+    }
+    else{
+        kidsPay = 0;
     }
     if(payable){
         payable = personPay + spousePay + kidsPay;
@@ -114,6 +120,16 @@ function handleKidsYes() {
 
 function handleKidsNo() {
     $('#numberOfKidsDiv').hide();
+    kidsPay = 0;
+    if(payable){
+        payable = personPay + spousePay + kidsPay;
+        $('#payable').text('Payable: ' + payable + ' tk');
+    }
+
+    if(netPayable){
+        netPayable = payable + Math.ceil((payable * charge) / 1000);
+        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
+    }
 }
 
 function handleNext() {
@@ -151,7 +167,6 @@ function handleNext() {
 function handlePaymentMode(e) {
     let paymentMode = e.getAttribute('value');
 
-    let charge = 0;
     if (paymentMode === 'Bkash') {
         charge = 15;
         $('#bkashAccount').show();
