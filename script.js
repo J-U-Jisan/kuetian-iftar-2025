@@ -64,12 +64,31 @@ function handleBatch() {
         personPay = 1500;
     else
         personPay = 1000;
+
+    if(payable){
+        payable = personPay + spousePay + kidsPay;
+        $('#payable').text('Payable: ' + payable + ' tk');
+    }
+
+    if(netPayable){
+        netPayable = payable + Math.ceil((payable * charge) / 1000);
+        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
+    }
 }
 
 function handleSpouse(){
     let spouse = $("input[name=spouse]:checked").val();
     if (spouse === 'Yes')
         spousePay = 1000;
+    
+    if(payable){
+        payable = personPay + spousePay + kidsPay;
+        $('#payable').text('Payable: ' + payable + ' tk');
+    }
+    if(netPayable){
+        netPayable = payable + Math.ceil((payable * charge) / 1000);
+        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
+    }
 }
 
 function handleNumberOfKids(){
@@ -77,6 +96,15 @@ function handleNumberOfKids(){
     let number_of_kids = $('#numberOfKids').val();
     if(kids === 'Yes'){
         kidsPay = (number_of_kids*500);
+    }
+    if(payable){
+        payable = personPay + spousePay + kidsPay;
+        $('#payable').text('Payable: ' + payable + ' tk');
+    }
+
+    if(netPayable){
+        netPayable = payable + Math.ceil((payable * charge) / 1000);
+        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
     }
 }
 
@@ -125,13 +153,13 @@ function handlePaymentMode(e) {
 
     let charge = 0;
     if (paymentMode === 'Bkash') {
-        charge = 20;
+        charge = 15;
         $('#bkashAccount').show();
         $('#nagadAccount').hide();
         $('#rocketAccount').hide();
     } 
     else if (paymentMode === 'Nagad') {
-        charge = 15;
+        charge = 12;
         $('#bkashAccount').hide();
         $('#nagadAccount').show();
         $('#rocketAccount').hide();
