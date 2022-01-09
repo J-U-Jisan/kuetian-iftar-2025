@@ -52,7 +52,7 @@ function insert_value() {
 
 function onLoad() {
     $('#numberOfKidsDiv').hide();
-    $('#secondPage').hide();
+    // $('#secondPage').hide();
     $('#bkashAccount').hide();
     $('#nagadAccount').hide();
     $('#rocketAccount').hide();
