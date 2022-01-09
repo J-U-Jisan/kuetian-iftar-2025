@@ -1,4 +1,4 @@
-var script_url = "https://script.google.com/macros/s/AKfycbzpuaOOPcCN-qKg5kyulRkqlHFxkmKDB750LoQ_vJ0SSL2iaeg4UqiGna8NE29vXnMkxQ/exec";
+var script_url = "https://script.google.com/macros/s/AKfycbzsbh-rpDD4PNe1Z2pQzgvubUeteMr1AJ6wrFrpvAzWT_u79FDd9zvETXWRSyDEkrNNrw/exec";
 let payable = 0;
 let personPay = 0;
 let spousePay = 0;
