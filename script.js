@@ -25,6 +25,9 @@ function insert_value() {
     let paymentMode = $('input[name=paymentMode]:checked').val();
     let transactionID = $('#transactionID').val();
 
+    if(kids==='No')
+        numberOfKids= '';
+
     if(!paymentMode || !transactionID || !accountNo){
         $('#secondForm').addClass('was-validated');
         return false;
@@ -120,6 +123,7 @@ function handleKidsYes() {
 
 function handleKidsNo() {
     $('#numberOfKidsDiv').hide();
+
     kidsPay = 0;
     if(payable){
         payable = personPay + spousePay + kidsPay;
