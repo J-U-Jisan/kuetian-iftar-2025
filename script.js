@@ -1,8 +1,11 @@
-var script_url = "https://script.google.com/macros/s/AKfycbzsbh-rpDD4PNe1Z2pQzgvubUeteMr1AJ6wrFrpvAzWT_u79FDd9zvETXWRSyDEkrNNrw/exec";
+var script_url = "https://script.google.com/macros/s/AKfycbz0vW3Gf_NN4PRfSiVfMaNqrJKVROhF3t_mmdVZvNCGdkvlWEWGmK7aOglWYnjZGCc1IQ/exec";
+
 let payable = 0;
 let personPay = 0;
 let spousePay = 0;
 let kidsPay = 0;
+let driverPay = 0;
+let maidPay = 0;
 let netPayable = 0;
 let accountNo = '';
 let charge = 0;
@@ -22,6 +25,7 @@ function insert_value() {
     let kids = $('input[name=kids]:checked').val();
     let numberOfKids = $('#numberOfKids').val();
     let driver = $('input[name=driver]:checked').val();
+    let maid = $('input[name=maid]:checked').val();
     let paymentMode = $('input[name=paymentMode]:checked').val();
     let transactionID = $('#transactionID').val();
 
@@ -35,7 +39,7 @@ function insert_value() {
 
     $('#submit').prop('disabled', true);
 
-    var url = script_url + "?name=" + name + "&roll=" + roll + "&batch=" + batch + "&department=" + department + "&mobileNumber=" + mobileNumber + "&email=" + email + "&bloodGroup=" + bloodGroup + "&iebMembershipNo=" + iebMembershipNo + "&spouse=" + spouse + "&kids=" + kids + "&numberOfKids=" + numberOfKids + "&driver=" + driver + "&payable=" + payable + "&paymentMode=" + paymentMode + "&netPayable=" + netPayable + "&accountNo=" + accountNo + "&transactionID=" + transactionID + "&action=insert";
+    var url = script_url + "?name=" + name + "&roll=" + roll + "&batch=" + batch + "&department=" + department + "&mobileNumber=" + mobileNumber + "&email=" + email + "&bloodGroup=" + bloodGroup + "&iebMembershipNo=" + iebMembershipNo + "&spouse=" + spouse + "&kids=" + kids + "&numberOfKids=" + numberOfKids + "&driver=" + driver + "&maid=" + maid + "&payable=" + payable + "&paymentMode=" + paymentMode + "&netPayable=" + netPayable + "&accountNo=" + accountNo + "&transactionID=" + transactionID + "&action=insert";
 
     try{
         jQuery.ajax({
@@ -44,6 +48,7 @@ function insert_value() {
             method: "GET",
             dataType: "jsonp",
             complete: function(data, text){
+                console.log('Registration', data);
                 window.location.href = "./greetings.html";
             }
         });
@@ -54,6 +59,7 @@ function insert_value() {
 }
 
 function onLoad() {
+    $("#nonKuetianSection").hide();
     $('#numberOfKidsDiv').hide();
     $('#secondPage').hide();
     $('#bkashAccount').hide();
@@ -64,57 +70,46 @@ function onLoad() {
 
 function handleBatch() {
     let batch = $('#batch').val();
-    if (batch <= 2011 && batch >= 1972)
-        personPay = 1500;
-    else
+    
+    if (batch) {
+        $("#nonKuetianSection").show();
+        batch = parseInt(batch);
+    }
+
+    if (batch <= 2013 && batch >= 1972)
         personPay = 1000;
-
-    if(payable){
-        payable = personPay + spousePay + kidsPay;
-        $('#payable').text('Payable: ' + payable + ' tk');
+    else if (batch >= 2014 && batch <= 2016)
+        personPay = 500;
+    else if (batch > 2016) {
+        personPay = 250;
     }
+    
+    paymentCalculator();
 
-    if(netPayable){
-        netPayable = payable + Math.ceil((payable * charge) / 1000);
-        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
-    }
 }
 
 function handleSpouse(){
     let spouse = $("input[name=spouse]:checked").val();
+
     if (spouse === 'Yes')
-        spousePay = 1000;
+        spousePay = 1;
     else
         spousePay = 0;
     
-    if(payable){
-        payable = personPay + spousePay + kidsPay;
-        $('#payable').text('Payable: ' + payable + ' tk');
-    }
-    if(netPayable){
-        netPayable = payable + Math.ceil((payable * charge) / 1000);
-        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
-    }
+    paymentCalculator();
 }
 
 function handleNumberOfKids(){
     let kids = $('input[name=kids]:checked').val();
     let number_of_kids = $('#numberOfKids').val();
     if(kids === 'Yes'){
-        kidsPay = (number_of_kids*500);
+        kidsPay = (number_of_kids*250);
     }
     else{
         kidsPay = 0;
     }
-    if(payable){
-        payable = personPay + spousePay + kidsPay;
-        $('#payable').text('Payable: ' + payable + ' tk');
-    }
 
-    if(netPayable){
-        netPayable = payable + Math.ceil((payable * charge) / 1000);
-        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
-    }
+    paymentCalculator();
 }
 
 function handleKidsYes() {
@@ -125,15 +120,31 @@ function handleKidsNo() {
     $('#numberOfKidsDiv').hide();
 
     kidsPay = 0;
-    if(payable){
-        payable = personPay + spousePay + kidsPay;
-        $('#payable').text('Payable: ' + payable + ' tk');
-    }
+    
+    paymentCalculator();
+}
 
-    if(netPayable){
-        netPayable = payable + Math.ceil((payable * charge) / 1000);
-        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
-    }
+function handleDriver() {
+    const driver = $("input[name=driver]:checked").val();
+    
+    console.log(driver)
+    if (driver === 'Yes')
+        driverPay = 500;
+    else 
+        driverPay = 0;
+
+    paymentCalculator();
+}
+
+function handleMaid() {
+    const maid = $("input[name=maid]:checked").val();
+    console.log(maid);
+    if (maid === 'Yes')
+        maidPay = 500;
+    else 
+        maidPay = 0;
+
+    paymentCalculator();
 }
 
 function handleNext() {
@@ -147,8 +158,9 @@ function handleNext() {
     let kids = $('input[name=kids]:checked').val();
     let number_of_kids = $('#numberOfKids').val();
     let driver = $('input[name=driver]:checked').val();
+    let maid = $('input[name=maid]:checked').val();
 
-    if (!name || !roll || !batch || !department || !mobile_number || !email || !spouse || !kids || !driver) {
+    if (!name || !roll || !batch || !department || !mobile_number || !email || !spouse || !kids || !driver || !maid) {
         $('#firstForm').addClass("was-validated");
         return false;
     }
@@ -161,7 +173,7 @@ function handleNext() {
     $('#nextButton').hide();
     $('#secondPage').show();
 
-    payable = personPay + spousePay + kidsPay;
+    payable = personPay + spousePay * personPay + kidsPay + driverPay + maidPay;
 
     $('#payable').text('Payable: ' + payable + ' tk');
 
@@ -170,21 +182,26 @@ function handleNext() {
 
 function handlePaymentMode(e) {
     let paymentMode = e.getAttribute('value');
+    
+    console.log('account no', accountNo);
 
     if (paymentMode === 'Bkash') {
         charge = 15;
+        accountNo = $('input[name=bkashAccountNo]:checked').val();
         $('#bkashAccount').show();
         $('#nagadAccount').hide();
         $('#rocketAccount').hide();
     } 
     else if (paymentMode === 'Nagad') {
         charge = 12;
+        accountNo = $('input[name=nagadAccountNo]:checked').val();
         $('#bkashAccount').hide();
         $('#nagadAccount').show();
         $('#rocketAccount').hide();
     }
     else if (paymentMode === 'Rocket') {
         charge = 10;
+        accountNo = $('input[name=rocketAccountNo]:checked').val();
         $('#bkashAccount').hide();
         $('#nagadAccount').hide();
         $('#rocketAccount').show();
@@ -199,4 +216,16 @@ function handleAccountNo(e) {
     accountNo = e.getAttribute("value");
 
     console.log(accountNo);
+}
+
+function paymentCalculator() {
+    if(payable){
+        payable = personPay + spousePay * personPay + kidsPay + driverPay + maidPay;
+        $('#payable').text('Payable: ' + payable + ' tk');
+    }
+
+    if(netPayable){
+        netPayable = payable + Math.ceil((payable * charge) / 1000);
+        $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
+    }
 }
