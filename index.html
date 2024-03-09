@@ -1,8 +1,8 @@
 <html><head>
-    <title>KUETIAN NIGHT 2022 Registration</title>
+    <title>মেজবানি ইফতার ২০২৪</title>
     <link rel="icon" href="./images/logo.JPG" type="image/icon type">
 
-    <meta property="og:title" content="KUETIAN NIGHT 2022 Registration" />
+    <meta property="og:title" content="মেজবানি ইফতার ২০২৪" />
     <meta property="og:image" content="./images/kuetian_night.jpeg" />
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,21 +14,10 @@
     <div class="container-lg py-3 my-4 bg-light rounded-2 shadow">
         <div class="mb-5 text-center">
             <img src="./images/logo.JPG" class="col-md-1">
-            <h2 class="text-center">KUETIAN NIGHT 2022</h2>
+            <h2 class="text-center">মেজবানি ইফতার ২০২৪</h2>
             <h6>Friday, 4th February, 2022</h6>
-            <h6>Time: 4.00pm</h6>
-            <h6>Venue: Railway Officer's Club</h6>
-            <div class="d-flex justify-content-center">
-                <p class="col-md-8 text-danger">
-                    দেশে করোনাভাইরাসের নতুন ধরন ওমিক্রনের প্রাদুর্ভাবের পর সংক্রমণ ঠেকাতে আবার 
-                    কিছু বিধি-নিষেধ আরোপ করেছে সরকার। এমতাবস্থায় KUET Club Chittagong প্রস্তাবিত
-                    KUETian Nights এর নিবন্ধন সাময়িক স্থগিত করা হয়েছে। এ সম্পর্কিত পরবর্তী কোনো
-                    ঘোষণা না দেওয়া পর্যন্ত নিবন্ধন না করার জন্য সকলকে অনুরোধ করা হল।
-    
-                    সাময়িক এই অসুবিধার জন্য আমরা আন্তরিকভাবে দুঃখিত। এই ব্যাপারে সকলের 
-                    সহযোগিতা কামনা করছি।
-                </p>
-            </div>
+            <h6>Time: 4.00 PM</h6>
+            <h6>Venue: BPDB Rest House, Chatteshawri Road, Chawkbazar</h6>
             <h4 class="text-center mt-4">Registration Form</h4>
         </div>
         
@@ -93,6 +82,13 @@
                             <option value="2013">2013</option>
                             <option value="2014">2014</option>
                             <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
                         </select>
                     </div>
 
@@ -100,16 +96,20 @@
                         <label for="department" class="form-label">Department <sup class="text-danger">*</sup></label>
                         <select class="form-select" name="department" id="department" required>
                             <option value="">Select Department</option>
-                            <option value="CSE">CSE</option>
                             <option value="EEE">EEE</option>
-                            <option value="ME">ME</option>
-                            <option value="CE">CE</option>
-                            <option value="IEM">IEM</option>
-                            <option value="BECM">BECM</option>
-                            <option value="TE">TE</option>
+                            <option value="CSE">CSE</option>
+                            <option value="MSE">MSE</option>
                             <option value="ECE">ECE</option>
-                            <option value="LE">LE</option>
                             <option value="BME">BME</option>
+                            <option value="ME">ME</option>
+                            <option value="IEM">IEM</option>
+                            <option value="LE">LE</option>
+                            <option value="MTE">MTE</option>
+                            <option value="ChM">ChM</option>
+                            <option value="TE">TE</option>
+                            <option value="CE">CE</option>
+                            <option value="BECM">BECM</option>
+                            <option value="ARCH">ARCH</option>
                             <option value="URP">URP</option>
                         </select>
                     </div>
@@ -143,62 +143,75 @@
                         <label class="form-label" for="iebMembershipNo">IEB Membership No</label>
                         <input type="text" id="iebMembershipNo" class="form-control" placeholder="Enter IEB Membership No" />
                     </div>
-
-                    <div class="mb-3">
-                    
-                        <label class="form-label d-block">Spouse <sup class="text-danger">*</sup></label>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="spouseYes" name="spouse" value="Yes" required onclick="handleSpouse()">
-                            <label class="form-check-label" for="spouseYes"> Yes</label>
+                    <div id="nonKuetianSection">
+                        <div class="mb-3">
+                            <label class="form-label d-block">Spouse <sup class="text-danger">*</sup></label>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="spouseYes" name="spouse" value="Yes" required onclick="handleSpouse()">
+                                <label class="form-check-label" for="spouseYes"> Yes</label>
+                            </div>
+    
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="spouseNo" name="spouse" value="No" required onclick="handleSpouse()">
+                                <label class="form-check-label" for="spouseNo"> No</label>
+                            </div>
                         </div>
-
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="spouseNo" name="spouse" value="No" required onclick="handleSpouse()">
-                            <label class="form-check-label" for="spouseNo"> No</label>
+    
+                        <div class="mb-3">
+                        
+                            <label class="form-label d-block">Kids <sup class="text-danger">*</sup></label>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="kidsYes" name="kids" value="Yes" required onclick="handleKidsYes()">
+                                <label class="form-check-label" for="kidsYes"> Yes</label>
+                            </div>
+    
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="kidsNo" name="kids" value="No" required onclick="handleKidsNo()">
+                                <label class="form-check-label" for="kidsNo"> No</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3" id="numberOfKidsDiv">
+                        
+                            <label class="form-label" for="numberOfKids">Number of Kids (If Any) <sup class="text-danger">*</sup></label>
+                            <select class="form-select" id="numberOfKids" required onchange="handleNumberOfKids()">
+                                <option value="">Select number of kids</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+    
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label d-block">Driver <sup class="text-danger">*</sup></label>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="driverYes" name="driver" value="Yes" required onclick="handleDriver()"/>
+                                <label class="form-check-label" for="driverYes"> Yes</label>
+                            </div>
+    
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="driverNo" name="driver" value="No" required onclick="handleDriver()" />
+                                <label class="form-check-label" for="driverNo"> No</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label d-block">Maid <sup class="text-danger">*</sup></label>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="maidYes" name="maid" value="Yes" required onclick="handleMaid()"/>
+                                <label class="form-check-label" for="maidYes"> Yes</label>
+                            </div>
+    
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="maidNo" name="maid" value="No" required onclick="handleMaid()"/>
+                                <label class="form-check-label" for="maidNo"> No</label>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                    
-                        <label class="form-label d-block">Kids <sup class="text-danger">*</sup></label>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="kidsYes" name="kids" value="Yes" required onclick="handleKidsYes()">
-                            <label class="form-check-label" for="kidsYes"> Yes</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="kidsNo" name="kids" value="No" required onclick="handleKidsNo()">
-                            <label class="form-check-label" for="kidsNo"> No</label>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-3" id="numberOfKidsDiv">
-                    
-                        <label class="form-label" for="numberOfKids">Number of Kids (If Any) <sup class="text-danger">*</sup></label>
-                        <select class="form-select" id="numberOfKids" required onchange="handleNumberOfKids()">
-                            <option value="">Select number of kids</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label class="form-label d-block">Driver <sup class="text-danger">*</sup></label>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="driverYes" name="driver" value="Yes" required />
-                            <label class="form-check-label" for="driverYes"> Yes</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" id="driverNo" name="driver" value="No" required />
-                            <label class="form-check-label" for="driverNo"> No</label>
-                        </div>
-                    </div>
-
-                    <input type="button" value="Next" class="btn btn-primary disabled" id="nextButton" onclick="handleNext()">
+                    <input type="button" value="Next" class="btn btn-primary" id="nextButton" onclick="handleNext()">
                 </form>
             </div>
         </div>
@@ -206,10 +219,13 @@
             <div class="my-2 pt-1 col-lg-8 col-md-10" id="secondPage">
                 <h3>Payment Information</h3>
                 <div class="px-3 py-2 mt-3 rounded-2 bg-light-green text-white shadow">
-                    <p class="fst-italic">Registration fee for batch 1972 to 2011 is 1500 tk.</p>
-                    <p class="fst-italic">Registration fee for batch 2012 to 2015 is 1000 tk.</p>
-                    <p class="fst-italic">Registration fee for spouse is 1000 tk.</p>
-                    <p class="fst-italic">Registration fee for each kid is 500 tk.</p>
+                    <p class="fst-italic">Registration fee for batch 1972 to 2013 is 1000 tk.</p>
+                    <p class="fst-italic">Registration fee for batch 2014 to 2016 is 500 tk.</p>
+                    <p class="fst-italic">Registration fee for batch below 2016 is 250 tk.</p>
+                    <p class="fst-italic">Registration fee for spouse is same as Kuetian.</p>
+                    <p class="fst-italic">Registration fee for kid above 5 years is 250 tk.</p>
+                    <p class="fst-italic">Registration fee for driver is 500 tk.</p>
+                    <p class="fst-italic">Registration fee for maid is 500 tk.</p>
                 </div>
                 <div class="my-3">
                     <h5 id="payable" class="fw-bold"></h5>
@@ -237,28 +253,24 @@
                     <div class="mb-3" id="bkashAccount">
                         <label class="form-label">Bkash No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="bkash1" name="bkashAccountNo" value="01777758979" required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="bkash1">01777758979</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="bkash2" name="bkashAccountNo" value="01864488958" required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="bkash2">01864488958</label>
+                            <input type="radio" class="form-check-input" id="bkash1" name="bkashAccountNo" value="01706515114" checked onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="bkash1">01706515114 (Tausif - 2k17)</label>
                         </div>
                     </div>
 
                     <div class="mb-3" id="nagadAccount">
                         <label class="form-label">Nagad No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="nagad1" name="nagadAccountNo" value="01864488958" required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="nagad1">01864488958</label>
+                            <input type="radio" class="form-check-input" id="nagad1" name="nagadAccountNo" value="01706515114" checked required onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="nagad1">01706515114 (Tausif - 2k17)</label>
                         </div>
                     </div>
 
                     <div class="mb-3" id="rocketAccount">
-                        <label class="form-label">Rocket No:</label>
+                        <label class="form-label">Rocket No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="rocket1" name="rocketAccountNo" value="017986929483" required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="rocket1">017986929483</label>
+                            <input type="radio" class="form-check-input" id="rocket1" name="rocketAccountNo" value="017956206419" checked required onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="rocket1">017956206419</label>
                         </div>
                     </div>
 
@@ -276,7 +288,7 @@
             </div>
         </div>
         <div class="text-center text-primary">
-            <p class="fst-italic">For any queries please call 01777758979 or 01864488958 </p>
+            <p class="fst-italic">For any queries please call 01864-488958 (Bablu - EEE'11) or 01795-620641 (Imtiaz - MSE'17)</p>
         </div>
     </div>
 
