@@ -118,7 +118,7 @@ function handleKidsYes() {
 
 function handleKidsNo() {
     $('#numberOfKidsDiv').hide();
-
+    $('#numberOfKids').val('')
     kidsPay = 0;
     
     paymentCalculator();
