@@ -65,7 +65,21 @@ function onLoad() {
     $('#bkashAccount').hide();
     $('#nagadAccount').hide();
     $('#rocketAccount').hide();
-    // $('#nextButton').hide();
+    closeRegistration();
+}
+
+function closeRegistration() {
+    const targetDate = new Date(2024, 2, 31, 12, 0);
+    const now = new Date();
+    console.log('date', now);
+    console.log('current', targetDate);
+    if (now >= targetDate) {
+        $("#registrationClosed").show();
+        $('#nextButton').prop('disabled', 'true');
+    } else {
+        $("#registrationClosed").hide();
+        $('#nextButton').prop('enabled', 'true');
+    }
 }
 
 function handleBatch() {
