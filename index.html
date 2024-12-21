@@ -4,13 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Registration form for Mejbani Iftar 2024">
     
-    <meta property="og:title" content="মেজবানি ইফতার ২০২৪" />
-    <meta property="og:description" content="Registration form for Mejbani Iftar 2024">
+    <meta property="og:title" content="KUETIAN NIGHT 2025" />
+    <meta property="og:description" content="Registration form for KUETIAN NIGHT 2025">
     <meta property="og:image" content="./images/mejbani-iftar.jpg" />
     <meta property="og:url" content="https://j-u-jisan.github.io/mejbani-iftar-2024/" />
     <meta property="og:type" content="website" />
     
-    <title>মেজবানি ইফতার ২০২৪</title>
+    <title>KUETIAN NIGHT 2025</title>
     <link rel="icon" href="./images/logo.JPG" type="image/icon type">
     
     <link rel="stylesheet" href="style.css">
@@ -23,10 +23,10 @@
     <div class="container-lg py-3 my-4 bg-light rounded-2 shadow" id="main-div">
         <div class="mb-5 text-center">
             <img src="./images/logo.JPG" class="col-md-1">
-            <h2 class="text-center">মেজবানি ইফতার ২০২৪</h2>
-            <h6>Monday, 1st April, 2024</h6>
+            <h2 class="text-center">KUETIAN NIGHT 2025</h2>
+            <h6>Friday, 10th January, 2025</h6>
             <h6>Time: 5.00 PM</h6>
-            <h6>Venue: BPDB Rest House, Chatteshawri Road, Chawkbazar</h6>
+            <h6>Venue: LGED Hall Room, Sholosohor 2 No Gate, Beside Shikkha Board, Chattogram</h6>
             <h4 class="text-center mt-4">Registration Form</h4>
         </div>
 
@@ -102,6 +102,7 @@
                             <option value="2020">2020</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
+                            <option value="2022">2023</option>
                         </select>
                     </div>
 
@@ -233,13 +234,10 @@
             <div class="my-2 pt-1 col-lg-8 col-md-10" id="secondPage">
                 <h3>Payment Information</h3>
                 <div class="px-3 py-2 mt-3 rounded-2 bg-light-green text-white shadow">
-                    <p class="fst-italic">Registration fee for batch 1972 to 2013 is 1000 tk.</p>
-                    <p class="fst-italic">Registration fee for batch 2014 to 2016 is 500 tk.</p>
-                    <p class="fst-italic">Registration fee for batch below 2016 is 250 tk.</p>
-                    <p class="fst-italic">Registration fee for spouse is same as Kuetian.</p>
-                    <p class="fst-italic">Registration fee for kid above 5 years is 250 tk.</p>
-                    <p class="fst-italic">Registration fee for driver is 500 tk.</p>
-                    <p class="fst-italic">Registration fee for maid is 500 tk.</p>
+                    <p class="fst-italic">Registration Fee For KUETian ( All Batch ) is 1500 tk.</p>
+                    <p class="fst-italic">Registration fee for spouse is 1200 tk.</p>
+                    <p class="fst-italic">Registration fee for kid above 5 years is 500 tk.</p>
+                    <p class="fst-italic">Registration fee for driver & maid is 500 tk.</p>
                 </div>
                 <div class="my-3">
                     <h5 id="payable" class="fw-bold"></h5>
@@ -262,13 +260,21 @@
                             <input type="radio" class="form-check-input" id="paymentModeRocket" name="paymentMode" value="Rocket" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeRocket"> Rocket</label>
                         </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input" id="paymentModeOBL" name="paymentMode" value="OBL" required onclick="handlePaymentMode(this)">
+                            <label class="form-check-label" for="paymentModeRocket"> One Bank</label>
+                        </div>
                     </div>
                     
                     <div class="mb-3" id="bkashAccount">
                         <label class="form-label">Bkash No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="bkash1" name="bkashAccountNo" value="01864195562" checked onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="bkash1">01864195562 (Moin - 2k13)</label>
+                            <input type="radio" class="form-check-input" id="bkash1" name="bkashAccountNo" value="01795620641" checked onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="bkash1">01795620641 (Imtiaz- 2k17)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="bkash2" name="bkashAccountNo" value="01706515114" onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="bkash2">01706515114 (Tausif - 2k17)</label>
                         </div>
                     </div>
 
@@ -284,7 +290,19 @@
                         <label class="form-label">Rocket No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="rocket1" name="rocketAccountNo" value="017956206419" checked required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="rocket1">017956206419 (Imtiaz- 2k17)</label>
+                            <label class="form-label" for="rocket1">01795620641-9 (Imtiaz- 2k17)</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3" id="oblAccount">
+                        <label class="form-label">One Bank<sup class="text-danger">*</sup></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="oblAccount1" name="oblAccountNo" value="0032230000166" checked required onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="oblAccount1">
+                                <span class="d-block"><span class="text-secondary">A/C:</span> 0032230000166</span>
+                                <span class="d-block"><span class="text-secondary">Name:</span> MD. Imtiaz hossain Chowdhury</span>
+                                <span class="d-block"><span class="text-secondary">Branch:</span> Agrabad Branch</span>
+                            </label>
                         </div>
                     </div>
 
@@ -293,8 +311,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="transactionID">Transaction ID</label>
-                        <input type="text" name="transactionID" id="transactionID" class="form-control" placeholder="Enter Transaction ID" required />
+                        <label class="form-label" for="transactionID">Transaction ID or Bank Account No</label>
+                        <input type="text" name="transactionID" id="transactionID" class="form-control" placeholder="Enter Transaction ID or Bank Account No" required />
                     </div>
 
                     <input type="button" name="submit" value="Submit" class="btn btn-primary" id="submit" onclick="insert_value()">
@@ -302,7 +320,7 @@
             </div>
         </div>
         <div class="text-center text-primary">
-            <p class="fst-italic">For any queries please call 01864-488958 (Bablu - EEE'11) or 01795-620641 (Imtiaz - MSE'17)</p>
+            <p class="fst-italic">For any queries please call 01795-620641 (Imtiaz - MSE'17)</p>
         </div>
     </div>
 
