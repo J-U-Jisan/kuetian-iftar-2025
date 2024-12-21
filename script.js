@@ -62,14 +62,12 @@ function onLoad() {
     $("#nonKuetianSection").hide();
     $('#numberOfKidsDiv').hide();
     $('#secondPage').hide();
-    $('#bkashAccount').hide();
-    $('#nagadAccount').hide();
-    $('#rocketAccount').hide();
+    showPaymentMode('');
     closeRegistration();
 }
 
 function closeRegistration() {
-    const targetDate = new Date(2024, 2, 31, 12, 0);
+    const targetDate = new Date(2025, 0, 3, 12, 0);
     const now = new Date();
     console.log('date', now);
     console.log('current', targetDate);
@@ -90,23 +88,16 @@ function handleBatch() {
         batch = parseInt(batch);
     }
 
-    if (batch <= 2013 && batch >= 1972)
-        personPay = 1000;
-    else if (batch >= 2014 && batch <= 2016)
-        personPay = 500;
-    else if (batch > 2016) {
-        personPay = 250;
-    }
+    personPay = 1500;
     
     paymentCalculator();
-
 }
 
 function handleSpouse(){
     let spouse = $("input[name=spouse]:checked").val();
 
     if (spouse === 'Yes')
-        spousePay = 1;
+        spousePay = 1200;
     else
         spousePay = 0;
     
@@ -117,7 +108,7 @@ function handleNumberOfKids(){
     let kids = $('input[name=kids]:checked').val();
     let number_of_kids = $('#numberOfKids').val();
     if(kids === 'Yes'){
-        kidsPay = (number_of_kids*250);
+        kidsPay = (number_of_kids*500);
     }
     else{
         kidsPay = 0;
@@ -187,7 +178,7 @@ function handleNext() {
     $('#nextButton').hide();
     $('#secondPage').show();
 
-    payable = personPay + spousePay * personPay + kidsPay + driverPay + maidPay;
+    payable = personPay + spousePay + kidsPay + driverPay + maidPay;
 
     $('#payable').text('Payable: ' + payable + ' tk');
 
@@ -202,24 +193,23 @@ function handlePaymentMode(e) {
     if (paymentMode === 'Bkash') {
         charge = 15;
         accountNo = $('input[name=bkashAccountNo]:checked').val();
-        $('#bkashAccount').show();
-        $('#nagadAccount').hide();
-        $('#rocketAccount').hide();
+        showPaymentMode('bkashAccount');
     } 
     else if (paymentMode === 'Nagad') {
         charge = 12;
         accountNo = $('input[name=nagadAccountNo]:checked').val();
-        $('#bkashAccount').hide();
-        $('#nagadAccount').show();
-        $('#rocketAccount').hide();
+        showPaymentMode('nagadAccount');
     }
     else if (paymentMode === 'Rocket') {
         charge = 10;
         accountNo = $('input[name=rocketAccountNo]:checked').val();
-        $('#bkashAccount').hide();
-        $('#nagadAccount').hide();
-        $('#rocketAccount').show();
+        showPaymentMode('rocketAccount');
     } 
+    else if (paymentMode === 'OBL') {
+        charge = 0;
+        accountNo = $('input[name=oblAccountNo]:checked').val();
+        showPaymentMode('oblAccount');
+    }
     
     netPayable = payable + Math.ceil((payable * charge) / 1000);
     $('#netPayable').text('Net Payable: ' + netPayable + ' tk');
@@ -234,7 +224,7 @@ function handleAccountNo(e) {
 
 function paymentCalculator() {
     if(payable){
-        payable = personPay + spousePay * personPay + kidsPay + driverPay + maidPay;
+        payable = personPay + spousePay + kidsPay + driverPay + maidPay;
         $('#payable').text('Payable: ' + payable + ' tk');
     }
 
@@ -242,4 +232,16 @@ function paymentCalculator() {
         netPayable = payable + Math.ceil((payable * charge) / 1000);
         $('#netPayable').text('Net Payable: ' + netPayable + ' tk'); 
     }
+}
+
+function showPaymentMode(id) {
+    const paymentModes = ['bkashAccount', 'nagadAccount', 'rocketAccount', 'oblAccount'];
+
+    paymentModes.forEach((mode) => {
+        if (mode === id) {
+            $('#' + mode).show();
+        } else {
+            $('#' + mode).hide();
+        }
+    })
 }
