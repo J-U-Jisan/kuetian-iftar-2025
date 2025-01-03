@@ -67,7 +67,7 @@ function onLoad() {
 }
 
 function closeRegistration() {
-    const targetDate = new Date(2025, 0, 3, 12, 0);
+    const targetDate = new Date(2025, 0, 7, 12, 0);
     const now = new Date();
     console.log('date', now);
     console.log('current', targetDate);
