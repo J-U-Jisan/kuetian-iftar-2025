@@ -81,7 +81,7 @@ function closeRegistration() {
 }
 
 function handleBatch() {
-    let batch = $('#batch').val();
+    let batch = $('#batch').Tval();
     
     if (batch) {
         $("#nonKuetianSection").show();
