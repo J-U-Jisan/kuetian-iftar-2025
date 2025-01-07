@@ -10,6 +10,8 @@ let netPayable = 0;
 let accountNo = '';
 let charge = 0;
 var emailcheck = false;
+const applicationDeadline = new Date(2025, 0, 9, 12, 0); // 9th January 2025, 12:00 PM
+
 // Make an AJAX call to Google Script
 function insert_value() {
 
@@ -59,6 +61,7 @@ function insert_value() {
 }
 
 function onLoad() {
+    showApplicationDeadline();
     $("#nonKuetianSection").hide();
     $('#numberOfKidsDiv').hide();
     $('#secondPage').hide();
@@ -67,11 +70,8 @@ function onLoad() {
 }
 
 function closeRegistration() {
-    const targetDate = new Date(2025, 0, 7, 12, 0);
     const now = new Date();
-    console.log('date', now);
-    console.log('current', targetDate);
-    if (now >= targetDate) {
+    if (now >= applicationDeadline) {
         $("#registrationClosed").show();
         $('#nextButton').prop('disabled', 'true');
     } else {
@@ -244,4 +244,20 @@ function showPaymentMode(id) {
             $('#' + mode).hide();
         }
     })
+}
+
+function showApplicationDeadline() {
+    const deadline = formatDate(applicationDeadline);
+    $('#applicationDeadline').text('Deadline: ' + deadline);
+}
+
+// Function to format date
+function formatDate(date) {
+    const options = { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' };
+    const day = date.getDate();
+    const suffix = day % 10 === 1 && day !== 11 ? 'st' : 
+                   day % 10 === 2 && day !== 12 ? 'nd' : 
+                   day % 10 === 3 && day !== 13 ? 'rd' : 'th';
+    
+    return `${date.toLocaleDateString('en-US', options).replace(day, day + suffix)}`;
 }
