@@ -2,15 +2,15 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Registration form for Mejbani Iftar 2024">
+    <meta name="description" content="Registration form for KUETian IFTAR 2025">
     
-    <meta property="og:title" content="KUETIAN NIGHT 2025" />
-    <meta property="og:description" content="Registration form for KUETIAN NIGHT 2025">
+    <meta property="og:title" content="KUETian IFTAR 2025" />
+    <meta property="og:description" content="Registration form for KUETian IFTAR 2025">
     <!-- <meta property="og:image" content="./images/mejbani-iftar.jpg" /> -->
-    <meta property="og:url" content="https://j-u-jisan.github.io/kuetian-night-2025/" />
+    <meta property="og:url" content="https://j-u-jisan.github.io/kuetian-iftar-2025/" />
     <meta property="og:type" content="website" />
     
-    <title>KUETIAN NIGHT 2025</title>
+    <title>KUETian IFTAR 2025</title>
     <link rel="icon" href="./images/logo.JPG" type="image/icon type">
     
     <link rel="stylesheet" href="style.css">
@@ -23,10 +23,10 @@
     <div class="container-lg py-3 my-4 bg-light rounded-2 shadow" id="main-div">
         <div class="mb-5 text-center">
             <img src="./images/logo.JPG" class="col-md-1">
-            <h2 class="text-center">KUETIAN NIGHT 2025</h2>
-            <h6>Friday, 10th January, 2025</h6>
-            <h6>Time: 3.00 PM</h6>
-            <h6>Venue: LGED Hall Room, Sholosohor 2 No Gate, Beside Shikkha Board, Chattogram</h6>
+            <h2 class="text-center">KUETian IFTAR 2025</h2>
+            <h6>Saturday, 22nd March, 2025</h6>
+            <h6>Time: 4.30 PM</h6>
+            <h6>Venue: PDB Guest House, Chatteswari Road, Chawkbazar, Chittagong</h6>
             <h6 id="applicationDeadline"></h6>
             <h4 class="text-center mt-4">Registration Form</h4>
         </div>
@@ -99,11 +99,11 @@
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
-                            <option value="2019">2019</option>
+                            <!-- <option value="2019">2019</option>
                             <option value="2020">2020</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
-                            <option value="2022">2023</option>
+                            <option value="2022">2023</option> -->
                         </select>
                     </div>
 
@@ -175,7 +175,7 @@
     
                         <div class="mb-3">
                         
-                            <label class="form-label d-block">Kids <sup class="text-danger">*</sup></label>
+                            <label class="form-label d-block">Kids <span class="fst-italic">(Over 5 years)</span><sup class="text-danger">*</sup></label>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="kidsYes" name="kids" value="Yes" required onclick="handleKidsYes()">
                                 <label class="form-check-label" for="kidsYes"> Yes</label>
@@ -235,10 +235,10 @@
             <div class="my-2 pt-1 col-lg-8 col-md-10" id="secondPage">
                 <h3>Payment Information</h3>
                 <div class="px-3 py-2 mt-3 rounded-2 bg-light-green text-white shadow">
-                    <p class="fst-italic">Registration Fee For KUETian ( All Batch ) is 1500 tk.</p>
-                    <p class="fst-italic">Registration fee for spouse is 1200 tk.</p>
+                    <p class="fst-italic">Registration fee for all is 500 tk.</p>
+                    <!-- <p class="fst-italic">Registration fee for spouse is 1200 tk.</p>
                     <p class="fst-italic">Registration fee for kid above 5 years is 500 tk.</p>
-                    <p class="fst-italic">Registration fee for driver & maid is 500 tk.</p>
+                    <p class="fst-italic">Registration fee for driver & maid is 500 tk.</p> -->
                 </div>
                 <div class="my-3">
                     <h5 id="payable" class="fw-bold"></h5>
@@ -257,14 +257,14 @@
                             <input type="radio" class="form-check-input" id="paymentModeNagad" name="paymentMode" value="Nagad" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeNagad"> Nagad</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <!-- <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" id="paymentModeRocket" name="paymentMode" value="Rocket" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeRocket"> Rocket</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input" id="paymentModeOBL" name="paymentMode" value="OBL" required onclick="handlePaymentMode(this)">
                             <label class="form-check-label" for="paymentModeRocket"> One Bank</label>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div class="mb-3" id="bkashAccount">
@@ -274,8 +274,8 @@
                             <label class="form-label" for="bkash1">01795620641 (Imtiaz- 2k17)</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="bkash2" name="bkashAccountNo" value="01706515114" onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="bkash2">01706515114 (Tausif - 2k17)</label>
+                            <input type="radio" class="form-check-input" id="bkash2" name="bkashAccountNo" value="01864488958" onclick="handleAccountNo(this)" />
+                            <label class="form-label" for="bkash2">01864488958</label>
                         </div>
                     </div>
 
@@ -283,11 +283,11 @@
                         <label class="form-label">Nagad No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="nagad1" name="nagadAccountNo" value="01706515114" checked required onclick="handleAccountNo(this)" />
-                            <label class="form-label" for="nagad1">01706515114 (Tausif - 2k17)</label>
+                            <label class="form-label" for="nagad1">01795620641 (Imtiaz - 2k17)</label>
                         </div>
                     </div>
 
-                    <div class="mb-3" id="rocketAccount">
+                    <!-- <div class="mb-3" id="rocketAccount">
                         <label class="form-label">Rocket No <sup class="text-danger">*</sup></label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="rocket1" name="rocketAccountNo" value="017956206419" checked required onclick="handleAccountNo(this)" />
@@ -305,14 +305,14 @@
                                 <span class="d-block"><span class="text-secondary">Branch:</span> Agrabad Branch</span>
                             </label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="my-3">
                         <h5 id="netPayable" class="fw-bold"></h5>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="transactionID">Transaction ID or Bank Account No</label>
+                        <label class="form-label" for="transactionID">Transaction ID</label>
                         <input type="text" name="transactionID" id="transactionID" class="form-control" placeholder="Enter Transaction ID or Bank Account No" required />
                     </div>
 

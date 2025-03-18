@@ -1,4 +1,4 @@
-var script_url = "https://script.google.com/macros/s/AKfycbz0vW3Gf_NN4PRfSiVfMaNqrJKVROhF3t_mmdVZvNCGdkvlWEWGmK7aOglWYnjZGCc1IQ/exec";
+var script_url = "https://script.google.com/macros/s/AKfycby0P76ZWBQjpykySNHVVwPhq_6RgrACCUz6BkDb5Vjn_TdEPiPVo3SdjGHyanuvS6Ncpg/exec";
 
 let payable = 0;
 let personPay = 0;
@@ -10,7 +10,7 @@ let netPayable = 0;
 let accountNo = '';
 let charge = 0;
 var emailcheck = false;
-const applicationDeadline = new Date(2025, 0, 9, 12, 0); // 9th January 2025, 12:00 PM
+const applicationDeadline = new Date(2025, 2, 20, 23, 59); // 20th March 2025, 11:59 PM
 
 // Make an AJAX call to Google Script
 function insert_value() {
@@ -86,9 +86,8 @@ function handleBatch() {
     if (batch) {
         $("#nonKuetianSection").show();
         batch = parseInt(batch);
+        personPay = 500
     }
-
-    personPay = 1500;
     
     paymentCalculator();
 }
@@ -97,7 +96,7 @@ function handleSpouse(){
     let spouse = $("input[name=spouse]:checked").val();
 
     if (spouse === 'Yes')
-        spousePay = 1200;
+        spousePay = personPay;
     else
         spousePay = 0;
     
@@ -108,7 +107,7 @@ function handleNumberOfKids(){
     let kids = $('input[name=kids]:checked').val();
     let number_of_kids = $('#numberOfKids').val();
     if(kids === 'Yes'){
-        kidsPay = (number_of_kids*500);
+        kidsPay = (number_of_kids*personPay);
     }
     else{
         kidsPay = 0;
@@ -134,7 +133,7 @@ function handleDriver() {
     
     console.log(driver)
     if (driver === 'Yes')
-        driverPay = 500;
+        driverPay = personPay;
     else 
         driverPay = 0;
 
@@ -145,7 +144,7 @@ function handleMaid() {
     const maid = $("input[name=maid]:checked").val();
     console.log(maid);
     if (maid === 'Yes')
-        maidPay = 500;
+        maidPay = personPay;
     else 
         maidPay = 0;
 
@@ -196,7 +195,7 @@ function handlePaymentMode(e) {
         showPaymentMode('bkashAccount');
     } 
     else if (paymentMode === 'Nagad') {
-        charge = 12;
+        charge = 15;
         accountNo = $('input[name=nagadAccountNo]:checked').val();
         showPaymentMode('nagadAccount');
     }
